@@ -5,7 +5,6 @@
 #Dropbox is Syncing: "Syncing ..."
 #Dropbox is running: "Up to date..."
 STATUS="$(echo `dropbox status` | awk '{print $1;}')"
-I=1
 if [[ $STATUS == *"Dropbox"* ]]; then
   I=1
 elif [[ $STATUS == *"Starting"* ]]; then
@@ -17,4 +16,4 @@ elif [[ $STATUS == *"Syncing"* ]]; then
 else
   I=1
 fi
-echo " $ICON"
+echo "$ICON"
