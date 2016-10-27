@@ -5,7 +5,7 @@ C=#fb4934
 STATUS="$(echo `nmcli g` | cut -d " " -f $N | sed -e "s/\b\(.\)/\u\1/g")"
 if [[ $STATUS == *"Connected"* ]]; then
   STATUS="$(echo `nmcli d` | cut -d " " -f 8)"
-  C=#ebdbb2
+  C=#8ec07c
   if [[ $STATUS == *"Imperial-WPA"*  ]]; 
   then
     STATUS=Imperial
