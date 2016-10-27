@@ -5,15 +5,18 @@
 #Dropbox is Syncing: "Syncing ..."
 #Dropbox is running: "Up to date..."
 STATUS="$(echo `dropbox status` | awk '{print $1;}')"
+C_status=#fbf1c7
+DROPBOX_ICON=""
 if [[ $STATUS == *"Dropbox"* ]]; then
-  I=1
+  C_status=#fb4934
 elif [[ $STATUS == *"Starting"* ]]; then
   #statements
-  I=1
+  ICON=
 elif [[ $STATUS == *"Syncing"* ]]; then
-  #statements
-  I=1
+  DROPBOX_ICON=
 else
   I=1
 fi
-echo " $ICON"
+DROPBOX_ICON="%{F$C_status} $DROPBOX_ICON"
+#echo "%{A1:~/bin/dropbox.py start:} %{F$C_status}$DROPBOX_ICON%{F} $ICON %{A}"
+echo "%{F$C_status}$DROPBOX_ICON%{F} $ICON"
