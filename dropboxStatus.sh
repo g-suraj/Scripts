@@ -16,4 +16,4 @@ elif [[ $STATUS == *"Syncing"* ]]; then
 else
   I=1
 fi
-echo "$ICON"
+echo " $ICON"
