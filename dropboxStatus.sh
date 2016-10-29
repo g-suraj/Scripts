@@ -11,11 +11,11 @@ if [[ $STATUS == *"Dropbox"* ]]; then
   C_status=#ec644b
 elif [[ $STATUS == *"Starting"* ]]; then
   #statements
-  ICON=
+  DROPBOX_ICON=""
 elif [[ $STATUS == *"Syncing"* ]]; then
   DROPBOX_ICON=
 else
-  I=1
+  DROPBOX_ICON=""
 fi
-echo "%{F$C_status}$DROPBOX_ICON%{F} $ICON"
-#echo "%{A:dropbox start}$DROPBOX_ICON $ICON%{A}"
+echo "%{F$C_status}$DROPBOX_ICON%{-F}"
+#echo "%{A:dropbox star:}$DROPBOX_ICON $ICON%{A}"
