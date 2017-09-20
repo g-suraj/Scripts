@@ -1,0 +1,6 @@
+#!/bin/bash
+network_info=`iwgetid`
+network_dev=`echo $network_info | sed 's/ .*//'`
+network_name=`echo $network_info | cut -d: -f2-`
+dunstify -i wifi-100 "$network_dev" "online @ ${network_name:1:-1}"
+exit 0
